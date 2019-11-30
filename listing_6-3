@@ -1,0 +1,19 @@
+// listing 6-3 Arduino Serial Echo test - boulder colorado 11/30/19
+// echo every character
+
+char data; // holds incoming characters
+void setup()
+{
+Serial.begin(9600);
+}
+
+void loop()
+{
+  //only print when data is received
+  if (Serial.available() > 0)
+    {
+    data = Serial.read(); // reads byte of data
+    Serial.print(data);
+    }
+
+}// end loop
