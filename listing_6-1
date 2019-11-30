@@ -1,0 +1,18 @@
+// serial printing test with potentiometer
+// 11/29/19 - Boulder Colorado
+const int POT = 0;
+void setup()
+{
+Serial.begin(9600);
+}
+void loop()
+{
+int val = analogRead(POT);
+int per = map(val, 0, 1023, 0, 255);
+Serial.print("Analog Reading:");
+Serial.print(val);
+Serial.print(" percentage: ");
+Serial.print(per);
+Serial.println("%");
+delay(1000);
+}// end loop
